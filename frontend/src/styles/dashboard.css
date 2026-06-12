@@ -26,29 +26,42 @@
 }
 
 .stat-card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
   border: 1px solid #e5e7eb;
   display: flex;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
+  transition: all 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
 .stat-icon {
-  font-size: 2rem;
+  width: 64px;
+  height: 64px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef2ff;
+  color: #4f46e5;
 }
 
 .stat-value {
-  font-size: 2rem;
+  font-size: 2.25rem;
   font-weight: 700;
-  margin-top: 10px;
+  color: #111827;
 }
 
 .dashboard-section {
-  background: white;
-  border-radius: 12px;
-  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
   margin-bottom: 25px;
   border: 1px solid #e5e7eb;
 }
@@ -64,12 +77,26 @@
 }
 
 .action-btn {
-  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 16px;
   border: none;
-  border-radius: 10px;
+  border-radius: 12px;
+
   background: #4f46e5;
   color: white;
+
+  font-weight: 600;
   cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.action-btn:hover {
+  background: #4338ca;
 }
 
 .leave-balance-grid {
@@ -99,10 +126,42 @@
 
 .activity-item {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.activity-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.activity-icon.success {
+  background: #ecfdf5;
+  color: #10b981;
+}
+
+.activity-icon.asset {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.activity-icon.profile {
+  background: #f5f3ff;
+  color: #7c3aed;
 }
 
 .activity-icon {
   font-size: 1.5rem;
+}
+
+.stat-content h3 {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 8px;
 }

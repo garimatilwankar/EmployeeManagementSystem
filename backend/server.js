@@ -7,6 +7,9 @@ import pool from './config/database.js';
 import logger from './config/logger.js';
 import errorHandler from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
+import employeeRoutes from './routes/employeeRoutes.js';
+import departmentRoutes from './routes/departmentRoutes.js';
+//import skillRoutes from './routes/skillRoutes.js';
 
 dotenv.config();
 
@@ -72,6 +75,9 @@ app.get('/api/health', async (req, res) => {
 
 // API Routes
 app.use('/api/v1/auth', authRoutes);
+app.use('/api/v1/employees', employeeRoutes);
+app.use('/api/v1/departments', departmentRoutes);
+//app.use('/api/v1/skills', skillRoutes);
 
 // 404 Route Handler
 app.use((req, res) => {

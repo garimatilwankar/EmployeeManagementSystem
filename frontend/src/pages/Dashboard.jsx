@@ -1,4 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import {
+  Users,
+  Building2,
+  CalendarClock,
+  Laptop,
+  UserPlus,
+  ClipboardList,
+  Briefcase,
+  FileBarChart,
+  CheckCircle2,
+  User,
+} from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import apiClient from '../services/apiClient';
 import MainLayout from '../layouts/MainLayout';
@@ -59,7 +71,9 @@ const Dashboard = () => {
 
         <div className="dashboard-grid">
           <div className="stat-card">
-            <div className="stat-icon employees">👨‍💼</div>
+            <div className="stat-icon employees">
+            <Users size={34} strokeWidth={2} />
+            </div>
             <div className="stat-content">
               <h3>Total Employees</h3>
               <p className="stat-value">{stats.totalEmployees}</p>
@@ -67,7 +81,9 @@ const Dashboard = () => {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon departments">🏢</div>
+            <div className="stat-icon departments">
+                <Building2 size={34} strokeWidth={2} />
+            </div>
             <div className="stat-content">
               <h3>Departments</h3>
               <p className="stat-value">{stats.totalDepartments}</p>
@@ -75,7 +91,9 @@ const Dashboard = () => {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon leaves">📅</div>
+            <div className="stat-icon leaves">
+  <CalendarClock size={34} strokeWidth={2} />
+</div>
             <div className="stat-content">
               <h3>Pending Leaves</h3>
               <p className="stat-value">{stats.pendingLeaves}</p>
@@ -83,7 +101,9 @@ const Dashboard = () => {
           </div>
 
           <div className="stat-card">
-            <div className="stat-icon assets">🖥️</div>
+            <div className="stat-icon assets">
+  <Laptop size={34} strokeWidth={2} />
+</div>
             <div className="stat-content">
               <h3>Total Assets</h3>
               <p className="stat-value">{stats.totalAssets}</p>
@@ -95,23 +115,26 @@ const Dashboard = () => {
           <div className="dashboard-section">
             <h2>Quick Actions</h2>
             <div className="quick-actions">
-              <button className="action-btn">
-                <span>➕</span>
-                <span>Add Employee</span>
-              </button>
-              <button className="action-btn">
-                <span>📅</span>
-                <span>Manage Leave Types</span>
-              </button>
-              <button className="action-btn">
-                <span>🖥️</span>
-                <span>Track Assets</span>
-              </button>
-              <button className="action-btn">
-                <span>📊</span>
-                <span>View Reports</span>
-              </button>
-            </div>
+  <button className="action-btn">
+    <UserPlus size={18} />
+    <span>Add Employee</span>
+  </button>
+
+  <button className="action-btn">
+    <ClipboardList size={18} />
+    <span>Leave Types</span>
+  </button>
+
+  <button className="action-btn">
+    <Briefcase size={18} />
+    <span>Assets</span>
+  </button>
+
+  <button className="action-btn">
+    <FileBarChart size={18} />
+    <span>Reports</span>
+  </button>
+</div>
           </div>
         )}
 
@@ -150,7 +173,9 @@ const Dashboard = () => {
           <h2>Recent Activities</h2>
           <div className="activity-list">
             <div className="activity-item">
-              <div className="activity-icon">✅</div>
+              <div className="activity-icon success">
+  <CheckCircle2 size={22} />
+</div>
               <div className="activity-content">
                 <p className="activity-title">Leave Approved</p>
                 <p className="activity-desc">Your leave request for June 15-17 has been approved</p>
@@ -159,7 +184,9 @@ const Dashboard = () => {
             </div>
 
             <div className="activity-item">
-              <div className="activity-icon">🖥️</div>
+              <div className="activity-icon asset">
+  <Laptop size={22} />
+</div>
               <div className="activity-content">
                 <p className="activity-title">Asset Assigned</p>
                 <p className="activity-desc">Dell Laptop has been assigned to you</p>
@@ -168,7 +195,9 @@ const Dashboard = () => {
             </div>
 
             <div className="activity-item">
-              <div className="activity-icon">👤</div>
+              <div className="activity-icon profile">
+  <User size={22} />
+</div>
               <div className="activity-content">
                 <p className="activity-title">Profile Updated</p>
                 <p className="activity-desc">Your profile information has been updated</p>
